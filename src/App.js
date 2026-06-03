@@ -107,7 +107,7 @@ function App() {
   // Effect for rates
   useEffect(() => {
     fetchRates();
-  }, [baseCurrency,fetchRates]);
+  }, [baseCurrency]);
 
   // Effect for conversion
   useEffect(() => {
@@ -119,7 +119,7 @@ function App() {
   // Effect for historical data
   useEffect(() => {
     fetchHistoricalData();
-  }, [baseCurrency, targetCurrency,fetchHistoricalData]);
+  }, [baseCurrency, targetCurrency,]);
 
   const handleAmountChange = (e) => {
     const value = parseFloat(e.target.value);
