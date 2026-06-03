@@ -40,7 +40,7 @@ function App() {
   const [convertedAmount, setConvertedAmount] = useState(0);
   const [historicalData, setHistoricalData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [, setError] = useState(null);
   const [usingMockData, setUsingMockData] = useState(false);
 
   // Fetch latest rates with retry logic
@@ -107,7 +107,7 @@ function App() {
   // Effect for rates
   useEffect(() => {
     fetchRates();
-  }, [baseCurrency]);
+  }, [baseCurrency,fetchRates]);
 
   // Effect for conversion
   useEffect(() => {
@@ -119,7 +119,7 @@ function App() {
   // Effect for historical data
   useEffect(() => {
     fetchHistoricalData();
-  }, [baseCurrency, targetCurrency]);
+  }, [baseCurrency, targetCurrency,fetchHistoricalData]);
 
   const handleAmountChange = (e) => {
     const value = parseFloat(e.target.value);
